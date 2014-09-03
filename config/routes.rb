@@ -1,5 +1,6 @@
 QuestionBank::Application.routes.draw do
 
+  get "sessions/new"
  root to: "questions#index"
 
  resources :users, only: [:new, :create]
