@@ -1,2 +1,19 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<% provide(:title, 'Question Bank - Login') %>
+
+<h1>Login</h1>
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+	<p>
+		<%= f.label :username, "Username" %>
+		<%= f.text_field :username %>
+	</p>
+
+	<p>
+		<%= f.label :password %><br />
+		<%= f.password_field :password %>
+	</p>
+
+	<p>
+		<%= f.submit "Login" %>
+	</p>
+<% end %>
