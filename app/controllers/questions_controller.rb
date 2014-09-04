@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  before_action :auth, only: [:create]	
+  before_action :auth, only: [:create, :your_questions]	
 
   def index
   	@question = Question.new
@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
   	@question = current_user.questions.build(question_params)
   	if @question.save
   		flash[:success] = "Your question has been posted."
-  		redirect_to root_url
+  		redirect_to @question
   	else
   		@questions = Question.unsolved(params)
   		render 'index'
@@ -20,6 +20,10 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+  end
+
+  def your_questions
+    @questions = current_user.your_questions(params)
   end
 
   private
