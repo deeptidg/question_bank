@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
 
   def index
   	@question = Question.new
+  	@questions = Question.unsolved(params)
   end
 
   def create
@@ -12,6 +13,7 @@ class QuestionsController < ApplicationController
   		flash[:success] = "Your question has been posted."
   		redirect_to root_url
   	else
+  		@questions = Question.unsolved(params)
   		render 'index'
   	end
   end

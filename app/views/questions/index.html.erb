@@ -1,8 +1,22 @@
 <%= provide(:title, "Question Bank") %>
-<p>Ask a Question</p>
+<div id='ask'>
+	<p>Ask a Question</p>
 
-<% if logged_in? %>
-	<%= render 'question_form' %>
-<% else %>
-	<p>Please log in to ask or answer questions.</p>
-<% end %>
+	<% if logged_in? %>
+		<%= render 'question_form' %>
+	<% else %>
+		<p>Please log in to ask or answer questions.</p>
+	<% end %>
+</div>
+
+<div id='questions'>
+	<h2>Unsolved Questions</h2>
+	<% if @questions.any? %>
+		<ul>
+			<%= render @questions %>
+		</ul>
+		<%= will_paginate %>
+	<% else %>
+		<p>No questions have been asked.</p>
+	<% end %>
+</div>
