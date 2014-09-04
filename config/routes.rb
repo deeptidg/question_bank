@@ -4,11 +4,11 @@ QuestionBank::Application.routes.draw do
  root to: "questions#index"
 
  resources :users, only: [:new, :create]
- resources :sessions, only: [:new, :create] 
+ resources :sessions, only: [:new, :create, :destroy] 
  
  get '/register', to: 'users#new'
  get '/login', to: 'sessions#new'
-get '/logout', to: 'sessions#destroy', via: :delete
+ #get '/logout', to: 'sessions#destroy', via: :delete
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
