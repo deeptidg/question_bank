@@ -33,7 +33,7 @@ class QuestionsController < ApplicationController
 
   def update
     @question = current_user.questions.find(params[:id])
-    if @question.update_attributes(params[:question])
+    if @question.update_attributes(question_params)
       flash[:success] = "Your question has been updated!"
       redirect_to @question
     else
