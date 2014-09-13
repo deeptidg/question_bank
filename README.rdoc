@@ -1,28 +1,10 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a clone of popular stackoverflow.com website where in questions can be posted, answered and the owner of the question can then mark a question as solved.
+This is inspired by tutsplus makeitsnappy tutorial used to learn ruby on rails.
+This application is developed to learn active models, validations in models, Authentication and Session management on rails 4.0.2. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Some of the highlights of the application
+* Authentication is implemented using gem bcrypt-ruby
+* will_paginate gem is used to paginate unsolved questions.
+* coffeescript-rails is used to search questions in the application.
